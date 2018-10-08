@@ -14,6 +14,14 @@ public class GameManager : Singleton<GameManager>
 
     private float maxTime = 2 * 60; // In seconds.
 
+    private int _numCoins;
+
+    public int NumCoins 
+    {
+        get { return _numCoins; }
+        set { _numCoins = value; }
+    }
+
     // Use this for initialization
     void Start()
     {

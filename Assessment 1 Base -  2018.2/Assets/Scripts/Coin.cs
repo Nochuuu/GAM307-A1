@@ -14,8 +14,26 @@ public class Coin : MonoBehaviour
     [SerializeField]
     private float movementDsitance = 0.5f; // The maximum distance the coin can move up and down
 
+    [SerializeField]
+    private GameObject collectCoinEffect; // The particle effect we will instantiate on Pickup 
+
     private float startingY;
     private bool isMovingUp = true;
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.tag == "Player")
+        {
+            Pickup();
+        }
+    }
+
+    private void Pickup()
+    {
+        GameManager.Instance.NumCoins++;
+        Instantiate(collectCoinEffect, transform.position, transform.rotation);
+        Destroy(gameObject);
+    }
 
     // Use this for initialization
     void Start () 

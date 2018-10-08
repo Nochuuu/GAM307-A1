@@ -5,17 +5,21 @@ using UnityEngine;
 public class UpdateUI : MonoBehaviour {
 
     [SerializeField]
-    private GUIText timerLabel;
+    private Text timerLabel;
 
-	// Use this for initialization
-	void Start () {
+    [SerializeField]
+    private Text coinsLabel;
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-        timerLabel.text = FormatTime(GameManager.Instance.TimeRemaining);
+        timerLabel.text = FormatTime (GameManager.Instance.TimeRemaining);
+        coinsLabel.text = GameManager.Instance.NumCoins.ToString.ToString();
 	}
 
     private string FormatTime(float timeInSeconds)

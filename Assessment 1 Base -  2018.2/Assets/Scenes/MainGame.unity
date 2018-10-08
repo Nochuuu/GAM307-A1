@@ -6575,7 +6575,8 @@ MeshFilter:
 --- !u!1 &1585709153
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1898851623448832, guid: 48fce486b6ce84d798d856843b358e30,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
   m_Component:
@@ -6592,7 +6593,8 @@ GameObject:
 --- !u!224 &1585709154
 RectTransform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 224277508797930756, guid: 48fce486b6ce84d798d856843b358e30,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1585709153}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -6610,7 +6612,8 @@ RectTransform:
 --- !u!114 &1585709155
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 114205697257147730, guid: 48fce486b6ce84d798d856843b358e30,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1585709153}
   m_Enabled: 1
@@ -6639,11 +6642,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Timer Text
 --- !u!222 &1585709156
 CanvasRenderer:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 222673611152398180, guid: 48fce486b6ce84d798d856843b358e30,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1585709153}
   m_CullTransparentMesh: 0
