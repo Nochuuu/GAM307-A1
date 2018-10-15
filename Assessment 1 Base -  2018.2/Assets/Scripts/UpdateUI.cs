@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UpdateUI : MonoBehaviour {
 
     [SerializeField]
-    private Text timerLabel;
+    private TextMeshProUGUI timerLabel;
 
     [SerializeField]
-    private Text coinsLabel;
+    private TextMeshProUGUI coinsLabel;
 
     // Use this for initialization
     void Start () {
@@ -19,7 +20,7 @@ public class UpdateUI : MonoBehaviour {
 	void Update () 
     {
         timerLabel.text = FormatTime (GameManager.Instance.TimeRemaining);
-        coinsLabel.text = GameManager.Instance.NumCoins.ToString.ToString();
+        coinsLabel.text = GameManager.Instance.NumCoins.ToString();
 	}
 
     private string FormatTime(float timeInSeconds)
