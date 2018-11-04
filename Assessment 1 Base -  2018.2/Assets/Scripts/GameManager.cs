@@ -25,12 +25,15 @@ public class GameManager : Singleton<GameManager>
 
     private int _numCoins;
 
-    public int NumCoins 
+    #region NumCoins
+    public int NumCoins
     {
         get { return _numCoins; }
         set { _numCoins = value; }
     }
+    #endregion
 
+    #region Health
     private float _playerHealth;
 
     public float PlayerHealth
@@ -48,6 +51,7 @@ public class GameManager : Singleton<GameManager>
     {
         DamagePlayerEvent.OnDamagePlayer -= DecrementPlayerHealth;
     }
+    #endregion
 
     // Use this for initialization
     void Start()
@@ -69,10 +73,11 @@ public class GameManager : Singleton<GameManager>
 
         if (_numCoins == totalCoinsInLevel && !gameOver)
         {
-            StartCoroutine (WonGame());
+            StartCoroutine(WonGame());
         }
     }
 
+    #region Health Decrement
     private void DecrementPlayerHealth(GameObject player)
     {
         if (isInvulnerable)
@@ -80,17 +85,19 @@ public class GameManager : Singleton<GameManager>
             return;
         }
 
-        StartCoroutine(InvulnerableDelay ());
+        StartCoroutine(InvulnerableDelay());
 
         PlayerHealth--;
 
         if (PlayerHealth <= 0)
         {
             //Restart Game
-            Restart ();
+            Restart();
         }
     }
+    #endregion
 
+    #region Restart
     public void Restart()
     {
         {
@@ -99,7 +106,9 @@ public class GameManager : Singleton<GameManager>
             PlayerHealth = maxHealth;
         }
     }
+    #endregion
 
+    #region WonGame
     private IEnumerator WonGame()
     {
         gameOver = true;
@@ -107,7 +116,9 @@ public class GameManager : Singleton<GameManager>
         yield return new WaitForSeconds(3);
         GameManager.Instance.Restart();
     }
+    #endregion
 
+    #region Invulnerable
     private IEnumerator InvulnerableDelay()
     {
         isInvulnerable = true;
@@ -119,5 +130,5 @@ public class GameManager : Singleton<GameManager>
     {
         return PlayerHealth / (float)maxHealth;
     }
-
+    #endregion
 }

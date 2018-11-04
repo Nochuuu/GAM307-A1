@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour 
+public class Coin : MonoBehaviour
 {
 
     [SerializeField]
@@ -28,15 +28,17 @@ public class Coin : MonoBehaviour
         }
     }
 
+    #region Pickup
     private void Pickup()
     {
         GameManager.Instance.NumCoins++;
         Instantiate(collectCoinEffect, transform.position, transform.rotation);
         Destroy(gameObject);
     }
+    #endregion
 
     // Use this for initialization
-    void Start () 
+    void Start()
     {
         startingY = transform.position.y;
 
@@ -45,18 +47,21 @@ public class Coin : MonoBehaviour
 
     void Update()
     {
-        //Spin();
+        //Spin(); // Would cause game to crash
         //Float();
     }
 
+    #region Spin
     private void Spin()
     {
-		while (true)
+        while (true)
         {
             transform.Rotate(transform.up, 360 * rotateSpeed * Time.deltaTime);
         }
-	}
+    }
+    #endregion
 
+    #region Float
     private void Float()
     {
         while (true)
@@ -77,4 +82,5 @@ public class Coin : MonoBehaviour
             transform.position = new Vector3(transform.position.x, newY, transform.position.z);
         }
     }
+#endregion
 }
